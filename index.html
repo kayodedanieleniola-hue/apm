@@ -143,15 +143,18 @@
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      background: #062416
+      background: #062416;
+      height: calc(100vh - 72px);
+      min-height: 500px;
+      max-height: 720px;
     }
 
     .hero img {
       width: 100%;
-      height: clamp(520px, 82vh, 760px);
+      height: 100%;
       object-fit: cover;
-      object-position: center;
-      opacity: .95;
+      object-position: center 30%;
+      opacity: .92;
     }
 
     .hero::after {
@@ -177,8 +180,8 @@
       font-family: "Sora", sans-serif;
       font-weight: 800;
       letter-spacing: -.035em;
-      font-size: clamp(2.3rem, 6.2vw, 4.4rem);
-      line-height: 1.02;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      line-height: 1.05;
       margin: 0 0 20px;
       color: #fff;
       max-width: 14ch;
@@ -199,7 +202,7 @@
     .hero-copy p {
       margin: 0;
       color: #d3f2e3;
-      font-size: clamp(1rem, 2.1vw, 1.2rem);
+      font-size: clamp(1rem, 2vw, 1.18rem);
       max-width: 54ch;
       line-height: 1.6;
     }
@@ -208,12 +211,14 @@
       display: inline-block;
       margin-top: 28px;
       font-size: 13.5px;
-      letter-spacing: .06em;
-      font-weight: 600;
-      color: #93f5c7;
-      border: 1px solid rgba(147, 245, 199, .35);
-      padding: 8px 16px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      background: rgba(16, 185, 129, .14);
+      padding: 7px 16px;
       border-radius: 999px;
+      border: 1px solid rgba(16, 185, 129, .3);
     }
 
     /* ---------- SECTIONS ---------- */
@@ -416,12 +421,93 @@
       color: #e2f7ec;
     }
 
+    /* ---------- AGENDA / WINNING TEAM ---------- */
+    .agenda-section {
+      background: #f8faf9;
+      padding: clamp(60px, 8vw, 100px) 0;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .agenda-head {
+      text-align: center;
+      margin-bottom: clamp(36px, 6vw, 56px);
+    }
+
+    .agenda-head .lede {
+      margin-inline: auto;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 3vw, 28px);
+    }
+
+    .agenda-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: clamp(22px, 4vw, 30px);
+      box-shadow: 0 10px 30px -15px rgba(11, 60, 38, 0.08);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .agenda-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px -15px rgba(0, 135, 81, 0.18);
+      border-color: #a7f3d0;
+    }
+
+    .agenda-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #e8f8f0;
+      color: #008751;
+      font-family: "Sora", sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .agenda-card h3 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.28rem);
+      font-weight: 700;
+      color: #0b3c26;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .agenda-card p {
+      margin: 0;
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 960px) {
+      .agenda-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .agenda-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ---------- FORM ---------- */
     .reg-form {
-      background: #ffffff;
+      background: linear-gradient(135deg, #0b3c26 0%, #008751 100%);
+      border: 1px solid #008751;
       border-radius: 24px;
       padding: clamp(28px, 5vw, 44px);
-      box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 25px 60px -20px rgba(11, 60, 38, 0.5);
       display: grid;
       gap: 20px;
     }
@@ -440,7 +526,7 @@
     .field label {
       font-size: 14px;
       font-weight: 600;
-      color: #0b3c26;
+      color: #ffffff;
     }
 
     .field input, .field select {
@@ -448,17 +534,17 @@
       font-size: 15.5px;
       padding: 13px 16px;
       border-radius: 12px;
-      border: 1.5px solid #d1f2e1;
-      background: #f8faf9;
-      color: #111827;
+      border: 1.5px solid #165b3b;
+      background: #ffffff;
+      color: #0b3c26;
       transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
     }
 
     .field input:focus {
-      border-color: #008751;
+      border-color: #10b981;
       background: #ffffff;
       outline: none;
-      box-shadow: 0 0 0 3.5px rgba(0, 135, 81, 0.2);
+      box-shadow: 0 0 0 3.5px rgba(16, 185, 129, 0.3);
     }
 
     .field input::placeholder {
@@ -466,10 +552,10 @@
     }
 
     .verify-block {
-      border: 1.5px dashed #008751;
+      border: 1.5px dashed #10b981;
       border-radius: 16px;
       padding: 22px clamp(18px, 3.5vw, 28px);
-      background: #f0fdf4;
+      background: rgba(255, 255, 255, 0.08);
       display: grid;
       gap: 16px;
       margin-top: 6px;
@@ -480,7 +566,7 @@
       font-family: "Sora", sans-serif;
       font-weight: 700;
       font-size: 15px;
-      color: #0b3c26;
+      color: #ffffff;
     }
 
     .check {
@@ -488,7 +574,7 @@
       gap: 10px;
       align-items: flex-start;
       font-size: 14.5px;
-      color: #374151;
+      color: #e2f7ec;
       cursor: pointer;
     }
 
@@ -497,7 +583,7 @@
       flex: none;
       width: 18px;
       height: 18px;
-      accent-color: #008751;
+      accent-color: #10b981;
     }
 
     .submit-btn {
@@ -506,24 +592,25 @@
       font-weight: 700;
       font-size: 16.5px;
       color: #ffffff;
-      background: linear-gradient(135deg, #008751 0%, #0b3c26 100%);
+      background: #0052cc;
       border: none;
       border-radius: 999px;
       padding: 16px 24px;
       cursor: pointer;
-      transition: transform .15s ease, box-shadow .15s ease;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
     }
 
     .submit-btn:hover {
+      background: #1d4ed8;
       transform: translateY(-2px);
-      box-shadow: 0 14px 28px -10px rgba(0, 135, 81, 0.5);
+      box-shadow: 0 14px 28px -10px rgba(0, 82, 204, 0.5);
     }
 
     .form-note {
       min-height: 20px;
       margin: 0;
       font-size: 14.5px;
-      color: #008751;
+      color: #6ff8bb;
       font-weight: 600;
     }
 
@@ -725,6 +812,72 @@
       <div class="wrap">
         <div class="team-banner">
           <img src="pci-team-2027.jpg" alt="People's Connect Initiative Card - APM 2027 Winning Team">
+        </div>
+      </div>
+    </section>
+
+        <section class="section agenda-section" id="winning-team">
+      <div class="wrap">
+        <div class="agenda-head">
+          <p class="eyebrow">APM 2027 Manifesto</p>
+          <h2>APM 2027 Winning Team Agenda</h2>
+          <p class="lede">Our 9 core pillars for progressive leadership, community development, and sustainable growth across Oyo State.</p>
+        </div>
+
+        <div class="agenda-grid">
+          <div class="agenda-card">
+            <div class="agenda-num">01</div>
+            <h3>Good Governance & Accountability</h3>
+            <p>Transparent leadership, responsible service, and better use of public resources.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">02</div>
+            <h3>Employment & Economic Development</h3>
+            <p>More jobs, stronger businesses, and opportunities for local economic growth.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">03</div>
+            <h3>Improved Qualitative Education</h3>
+            <p>Better learning, stronger skills, and greater opportunities for students.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">04</div>
+            <h3>Improved Infrastructure & Transportation</h3>
+            <p>Better roads, easier transportation, and more connected communities.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">05</div>
+            <h3>Agriculture & Food Security</h3>
+            <p>Stronger farming, increased food production, and better support for farmers.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">06</div>
+            <h3>Youth & Women Development</h3>
+            <p>More skills, opportunities, and participation for young people and women.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">07</div>
+            <h3>Security & Peace</h3>
+            <p>Safer communities, peaceful living, and a more stable environment.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">08</div>
+            <h3>Environmental Sustainability</h3>
+            <p>Cleaner communities, responsible resource use, and a healthier environment.</p>
+          </div>
+
+          <div class="agenda-card">
+            <div class="agenda-num">09</div>
+            <h3>Inclusive Development</h3>
+            <p>Greater access to opportunities and development across communities.</p>
+          </div>
         </div>
       </div>
     </section>
