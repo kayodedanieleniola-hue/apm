@@ -399,70 +399,59 @@
     }
 
     /* ---------- FORM ---------- */
-    .form-wrap {
-      max-width: 640px;
-      margin: clamp(48px, 7vw, 72px) auto 0
-    }
-
-    .form-head {
-      text-align: left;
-      margin-bottom: 30px
-    }
-
     .reg-form {
-      background: linear-gradient(135deg, #0b3c26 0%, #008751 100%);
-      border: 1px solid #008751;
-      border-radius: 22px;
-      padding: clamp(24px, 4vw, 38px);
-      box-shadow: 0 20px 50px -20px rgba(11, 60, 38, 0.4);
+      background: #ffffff;
+      border-radius: 24px;
+      padding: clamp(28px, 5vw, 44px);
+      box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.4);
       display: grid;
-      gap: 18px;
+      gap: 20px;
     }
 
     .field {
       display: grid;
-      gap: 7px
+      gap: 7px;
     }
 
     .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px
+      gap: 18px;
     }
 
     .field label {
       font-size: 14px;
       font-weight: 600;
-      color: #ffffff;
+      color: #0b3c26;
     }
 
     .field input, .field select {
       font: inherit;
       font-size: 15.5px;
-      padding: 12px 14px;
+      padding: 13px 16px;
       border-radius: 12px;
-      border: 1.5px solid #165b3b;
-      background: #ffffff;
-      color: #0b3c26;
-      transition: border-color .15s ease, background .15s ease;
+      border: 1.5px solid #d1f2e1;
+      background: #f8faf9;
+      color: #111827;
+      transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
     }
 
     .field input:focus {
-      border-color: #10b981;
+      border-color: #008751;
       background: #ffffff;
       outline: none;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      box-shadow: 0 0 0 3.5px rgba(0, 135, 81, 0.2);
     }
 
     .field input::placeholder {
-      color: #76a18d
+      color: #76a18d;
     }
 
     .verify-block {
-      border: 1.5px dashed #10b981;
+      border: 1.5px dashed #008751;
       border-radius: 16px;
-      padding: 20px clamp(16px, 3vw, 24px);
-      background: rgba(255, 255, 255, 0.08);
+      padding: 22px clamp(18px, 3.5vw, 28px);
+      background: #f0fdf4;
       display: grid;
       gap: 16px;
       margin-top: 6px;
@@ -472,8 +461,8 @@
       margin: 0;
       font-family: "Sora", sans-serif;
       font-weight: 700;
-      font-size: 14.5px;
-      color: #ffffff
+      font-size: 15px;
+      color: #0b3c26;
     }
 
     .check {
@@ -481,49 +470,48 @@
       gap: 10px;
       align-items: flex-start;
       font-size: 14.5px;
-      color: #e2f7ec;
-      cursor: pointer
+      color: #374151;
+      cursor: pointer;
     }
 
     .check input {
       margin-top: 3px;
       flex: none;
-      width: 17px;
-      height: 17px;
-      accent-color: #10b981
+      width: 18px;
+      height: 18px;
+      accent-color: #008751;
     }
 
     .submit-btn {
       font: inherit;
       font-family: "Sora", sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 16.5px;
       color: #ffffff;
-      background: #10b981;
+      background: linear-gradient(135deg, #008751 0%, #0b3c26 100%);
       border: none;
       border-radius: 999px;
-      padding: 15px 20px;
+      padding: 16px 24px;
       cursor: pointer;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
 
     .submit-btn:hover {
-      background: #059669;
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px -14px rgba(16, 185, 129, .8);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -10px rgba(0, 135, 81, 0.5);
     }
 
     .form-note {
       min-height: 20px;
       margin: 0;
       font-size: 14.5px;
-      color: #6ff8bb;
-      font-weight: 600
+      color: #008751;
+      font-weight: 600;
     }
 
     @media (max-width:560px) {
       .field-row {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
 
@@ -715,16 +703,17 @@
       </div>
     </section>
 
-    <section class="section tint" id="register">
+    <section class="full-bleed-banner">
+      <img src="pci-team-2027.jpg" alt="People's Connect Initiative Card - APM 2027 Winning Team">
+    </section>
+
+    <section class="section-register" id="register">
       <div class="wrap">
-        <div class="full-team-banner">
-          <img src="pci-team-2027.jpg" alt="People's Connect Initiative Card - APM 2027 Winning Team">
-        </div>
         <div class="form-wrap">
           <div class="form-head">
-            <p class="eyebrow">Join PCI</p>
-            <h2>Register your details</h2>
-            <p class="lede">Scan the code on your card or fill the form below to join the PCI network in your ward.</p>
+            <p class="eyebrow-light">Join PCI</p>
+            <h2 class="title-light">Register your details</h2>
+            <p class="lede-light">Scan the code on your card or fill the form below to join the PCI network in your ward.</p>
           </div>
 
           <form class="reg-form" id="pci-form">
@@ -768,17 +757,17 @@
               </div>
               <label class="check">
                 <input type="checkbox" name="confirm" required>
-                <span>I confirm the VIN provided is on my valid voter's card and belongs to me.</span>
+                <span>I confirm that the information provided is accurate and I consent to joining PCI.</span>
               </label>
             </div>
 
-            <button type="submit" class="submit-btn">Register with PCI</button>
-            <p class="form-note" id="form-note" role="status"></p>
+            <button type="submit" class="submit-btn">Submit Registration</button>
+            <p class="form-note" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
     </section>
-  </main>
+
 
   <footer>
     <div class="wrap">
