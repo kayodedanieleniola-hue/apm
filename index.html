@@ -14,48 +14,26 @@
     rel="stylesheet">
   <style>
     :root {
-      --white: #a5a1a1;
-      --paper: #f0fdf4;
-      --navy: #6ff8bb;
-      --ink: #065c37;
-      --muted: #406855;
-      --blue: #10b981;
-      --blue-deep: #008751;
+      --white: #ffffff;
+      --paper: #ffffff;
+      --navy: #0052cc;
+      --ink: #111827;
+      --muted: #4b5563;
+      --blue: #0052cc;
+      --blue-deep: #1d4ed8;
       --green: #008751;
       --green-accent: #10b981;
       --green-deep: #0b3c26;
-      --line: #d1f2e1;
+      --line: #e5e7eb;
       --surface: #ffffff;
       --bg: #ffffff;
-      --footer-bg: #e8f8f0;
-      --footer-ink: #1b4332;
+      --footer-bg: #ffffff;
+      --footer-ink: #111827;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --white: #071a10;
-        --paper: #0d281a;
-        --navy: #8be4b9;
-        --ink: #e2f7ec;
-        --muted: #80b49b;
-        --line: #163b27;
-        --surface: #0d281a;
-        --bg: #f9fdfb;
-        --footer-bg: #061c10;
-      }
-    }
+    
 
-    :root[data-theme="dark"] {
-      --white: #071a10;
-      --paper: #2d312f;
-      --navy: #8be4b9;
-      --ink: #e2f7ec;
-      --muted: #80b49b;
-      --line: #234b35;
-      --surface: #0d281a;
-      --bg: #ffffff;
-      --footer-bg: #061c10;
-    }
+    
 
     * {
       box-sizing: border-box
@@ -94,7 +72,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: saturate(1.4) blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -127,13 +105,13 @@
       font-weight: 700;
       font-size: 17px;
       letter-spacing: -.02em;
-      color: var(--navy);
+      color: #0052cc;
       line-height: 1.15
     }
 
     .brand-sub {
       font-size: 11.5px;
-      color: var(--muted);
+      color: #6b7280;
       letter-spacing: .02em;
       font-style: italic
     }
@@ -146,8 +124,8 @@
 
     .nav-links a {
       text-decoration: none;
-      color: var(--ink);
-      font-weight: 600;
+      color: #0052cc;
+      font-weight: 700;
       font-size: 15px;
       padding: 9px 16px;
       border-radius: 999px;
@@ -156,8 +134,8 @@
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      background: var(--paper);
-      color: var(--green-deep)
+      background: #eff6ff;
+      color: #1d4ed8
     }
 
     /* ---------- HERO ---------- */
@@ -170,10 +148,10 @@
 
     .hero img {
       width: 100%;
-      height: clamp(460px, 72vh, 720px);
+      height: clamp(520px, 82vh, 760px);
       object-fit: cover;
-      object-position: 62% center;
-      opacity: .92;
+      object-position: center;
+      opacity: .95;
     }
 
     .hero::after {
@@ -432,11 +410,11 @@
     }
 
     .reg-form {
-      background: var(--surface);
-      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #0b3c26 0%, #008751 100%);
+      border: 1px solid #008751;
       border-radius: 22px;
       padding: clamp(24px, 4vw, 38px);
-      box-shadow: 0 18px 44px -30px rgba(0, 135, 81, .35);
+      box-shadow: 0 20px 50px -20px rgba(11, 60, 38, 0.4);
       display: grid;
       gap: 18px;
     }
@@ -455,24 +433,25 @@
     .field label {
       font-size: 14px;
       font-weight: 600;
-      color: var(--ink)
+      color: #ffffff;
     }
 
-    .field input {
+    .field input, .field select {
       font: inherit;
       font-size: 15.5px;
       padding: 12px 14px;
       border-radius: 12px;
-      border: 1.5px solid var(--line);
-      background: var(--paper);
-      color: var(--ink);
+      border: 1.5px solid #165b3b;
+      background: #ffffff;
+      color: #0b3c26;
       transition: border-color .15s ease, background .15s ease;
     }
 
     .field input:focus {
-      border-color: var(--green-deep);
-      background: var(--white);
-      outline: none
+      border-color: #10b981;
+      background: #ffffff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
     }
 
     .field input::placeholder {
@@ -480,10 +459,10 @@
     }
 
     .verify-block {
-      border: 1.5px dashed var(--green-accent);
+      border: 1.5px dashed #10b981;
       border-radius: 16px;
       padding: 20px clamp(16px, 3vw, 24px);
-      background: var(--paper);
+      background: rgba(255, 255, 255, 0.08);
       display: grid;
       gap: 16px;
       margin-top: 6px;
@@ -494,7 +473,7 @@
       font-family: "Sora", sans-serif;
       font-weight: 700;
       font-size: 14.5px;
-      color: var(--green-deep)
+      color: #ffffff
     }
 
     .check {
@@ -502,7 +481,7 @@
       gap: 10px;
       align-items: flex-start;
       font-size: 14.5px;
-      color: var(--muted);
+      color: #e2f7ec;
       cursor: pointer
     }
 
@@ -511,7 +490,7 @@
       flex: none;
       width: 17px;
       height: 17px;
-      accent-color: var(--green-deep)
+      accent-color: #10b981
     }
 
     .submit-btn {
@@ -519,25 +498,26 @@
       font-family: "Sora", sans-serif;
       font-weight: 700;
       font-size: 16px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--green-accent), var(--green-deep));
+      color: #ffffff;
+      background: #10b981;
       border: none;
       border-radius: 999px;
       padding: 15px 20px;
       cursor: pointer;
-      transition: transform .15s ease, box-shadow .15s ease;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
     }
 
     .submit-btn:hover {
+      background: #059669;
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px -14px rgba(0, 135, 81, .6)
+      box-shadow: 0 12px 26px -14px rgba(16, 185, 129, .8);
     }
 
     .form-note {
       min-height: 20px;
       margin: 0;
       font-size: 14.5px;
-      color: var(--green-deep);
+      color: #6ff8bb;
       font-weight: 600
     }
 
@@ -549,10 +529,10 @@
 
     /* ---------- FOOTER ---------- */
     footer {
-      background: var(--footer-bg);
-      color: var(--footer-ink);
+      background: #ffffff;
+      color: #111827;
       padding: clamp(48px, 7vw, 74px) 0 30px;
-      border-top: 1px solid var(--line)
+      border-top: 1px solid #e5e7eb
     }
 
     .foot-top {
@@ -579,13 +559,13 @@
       font-family: "Sora", sans-serif;
       font-weight: 700;
       font-size: 19px;
-      color: var(--navy);
+      color: #008751;
       letter-spacing: -.02em
     }
 
     .foot-brand .t {
       font-size: 13px;
-      color: var(--muted);
+      color: #6b7280;
       font-style: italic
     }
 
@@ -593,33 +573,33 @@
       font-family: "Sora", sans-serif;
       font-size: 13.5px;
       margin: 0 0 12px;
-      color: var(--navy);
+      color: #0052cc;
       font-weight: 700
     }
 
     .foot-col a,
     .foot-col p {
       display: block;
-      color: var(--muted);
+      color: #374151;
       text-decoration: none;
       font-size: 15px;
       margin: 0 0 8px
     }
 
     .foot-col a:hover {
-      color: var(--green-deep)
+      color: #0052cc
     }
 
     .foot-bottom {
       margin-top: 40px;
       padding-top: 22px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid #e5e7eb;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: space-between;
       font-size: 13.5px;
-      color: var(--muted);
+      color: #6b7280;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -638,8 +618,12 @@
       }
 
       .hero img {
-        object-position: 70% center
-      }
+      width: 100%;
+      height: clamp(520px, 82vh, 760px);
+      object-fit: cover;
+      object-position: center;
+      opacity: .95;
+    }
 
       .hero::after {
         background: linear-gradient(180deg, rgba(4, 28, 17, .86) 0%, rgba(4, 28, 17, .72) 45%, rgba(4, 28, 17, .9) 100%)
