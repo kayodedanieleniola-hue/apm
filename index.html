@@ -173,9 +173,7 @@
       isolation: isolate;
       overflow: hidden;
       background: #062416;
-      height: 70vh;
-      min-height: 480px;
-      max-height: 600px;
+      min-height: calc(100vh - 61px);
       display: flex;
       align-items: center;
     }
@@ -823,30 +821,13 @@
       }
 
       .hero {
-        height: 64vh;
-        min-height: 420px;
-        max-height: 490px;
+        min-height: calc(100vh - 58px);
+        height: auto;
       }
 
       .hero-copy h1 {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
-        margin: 0 0 12px;
-      }
-
-      .hero-rule {
-        margin-bottom: 14px;
-      }
-
-      .hero-tag {
-        margin-top: 16px;
-      }
-
-      #overview.section {
-        padding-top: 20px;
-      }
-
-      #overview .lede {
-        margin-top: 100px;
+        font-size: clamp(1.75rem, 6.5vw, 2.6rem);
+        margin: 0 0 16px;
       }
 
       .desktop-hero-img {
