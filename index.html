@@ -173,9 +173,8 @@
       isolation: isolate;
       overflow: hidden;
       background: #062416;
-      height: 70vh;
-      min-height: 480px;
-      max-height: 580px;
+      min-height: calc(100vh - 61px);
+      min-height: calc(100dvh - 61px);
       display: flex;
       align-items: center;
     }
@@ -823,13 +822,9 @@
       }
 
       .hero {
-        height: 62vh;
-        min-height: 410px;
-        max-height: 480px;
-      }
-
-      #overview.section {
-        padding-top: 24px;
+        min-height: calc(100vh - 58px);
+        min-height: calc(100dvh - 58px);
+        height: auto;
       }
 
       .hero-copy h1 {
