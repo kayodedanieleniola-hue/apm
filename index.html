@@ -173,7 +173,9 @@
       isolation: isolate;
       overflow: hidden;
       background: #062416;
-      min-height: calc(100vh - 61px);
+      height: calc(100vh - 61px);
+      height: calc(100svh - 61px);
+      min-height: 500px;
       display: flex;
       align-items: center;
     }
@@ -821,8 +823,9 @@
       }
 
       .hero {
-        min-height: calc(100vh - 58px);
-        height: auto;
+        height: calc(100vh - 58px);
+        height: calc(100svh - 58px);
+        min-height: 440px;
       }
 
       .hero-copy h1 {
