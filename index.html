@@ -765,20 +765,23 @@
       .hero img {
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: center 25%;
+        opacity: .95;
       }
 
       .hero-copy h1 {
         font-size: clamp(1.75rem, 6.5vw, 2.6rem);
         max-width: 100%;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, .55);
       }
 
       .hero-copy p {
         font-size: 14.5px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
       }
 
       .hero::after {
-        background: linear-gradient(180deg, rgba(4, 28, 17, .90) 0%, rgba(4, 28, 17, .80) 50%, rgba(4, 28, 17, .95) 100%);
+        background: linear-gradient(180deg, rgba(4, 28, 17, .72) 0%, rgba(4, 28, 17, .55) 45%, rgba(4, 28, 17, .88) 100%);
       }
 
       .section-register {
@@ -801,6 +804,14 @@
     }
 
     @media (max-width: 480px) {
+      .hero img {
+        object-position: center 20%;
+      }
+
+      .hero::after {
+        background: linear-gradient(180deg, rgba(4, 28, 17, .75) 0%, rgba(4, 28, 17, .50) 40%, rgba(4, 28, 17, .90) 100%);
+      }
+
       .nav-inner {
         padding: 10px 0;
         gap: 8px;
